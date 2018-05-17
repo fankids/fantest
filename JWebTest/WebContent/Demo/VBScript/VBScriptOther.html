@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>VB Script常用函数</title>
+	<script type="text/vbscript">
+		
+		document.write("当前日期为 " & Date() & "<br />")
+		document.write("当前时间为 " & Time() & "<br />")
+		document.write("现在是 " & Now() & "<br />")
+		
+		document.write("1 代表的星期是 " & WeekDayName(1) & "<br />")
+		document.write("1 代表的星期简称是 " & WeekDayName(1, true) & "<br />")
+		document.write("当前星期为 " & WeekDayName(WeekDay(Date)) & "<br />")
+		document.write("当前星期简称为 " & WeekDayName(WeekDay(Date), true) & "<br />")
+		
+		document.write("当前月份为 " & MonthName(Month(Date)) & "<br />")
+		
+		thedate = CDate("1/1/2000 00:00:00")
+		document.write("距离2000年 " & DateDiff("yyyy" , thedate, Now()) & "年<br />")
+		document.write("距离2000年 " & DateDiff("m" , thedate, Now()) & "月<br />")
+		document.write("距离2000年 " & DateDiff("d" , thedate, Now()) & "日<br />")
+		document.write("距离2000年 " & DateDiff("h" , thedate, Now()) & "小时<br />")
+		document.write("距离2000年 " & DateDiff("n" , thedate, Now()) & "分钟<br />")
+		document.write("距离2000年 " & DateDiff("s" , thedate, Now()) & "秒<br />")
+		
+		document.write("30天之后是 " & DateAdd("d" , 30, Date()) & "<br />")
+
+		document.write("当前日期(通用格式)为 " & FormatDateTime(Date(), vbGeneralDate) & "<br />")
+		document.write("当前日期(长格式)为 " & FormatDateTime(Date(), vbLongDate) & "<br />")
+		document.write("当前日期(短格式)为 " & FormatDateTime(Date(), vbShortDate) & "<br />")
+		document.write("现在(长格式)为 " & FormatDateTime(Now(), vbLongTime) & "<br />")
+		document.write("现在(短格式)为 " & FormatDateTime(Now(), vbShortTime) & "<br />")
+		
+		somedate = "10/30/99"
+		document.write(somedate & "是日期吗？" & IsDate(somedate) & "<br />")
+		document.write(somedate & "对应日期(长格式)为 " & FormatDateTime(somedate, vbLongDate) & "<br />")
+
+		Dim str
+		str = " Hello World! "
+		document.write("原文：>" & str & "<<br />")
+		document.write("转大写：>" & UCase(str) & "<<br />")
+		document.write("转小写：>" & LCase(str) & "<<br />")
+
+		document.write("删除空格：>" & Trim(str) & "<<br />")
+		document.write("删除左空格：>" & LTrim(str) & "<<br />")
+		document.write("删除右空格：>" & RTrim(str) & "<<br />")
+		document.write("颠倒顺序：>" & StrReverse(str) & "<<br />")
+
+		Dim num
+		num = 18.57
+		document.write("原数：>" & num & "<<br />")
+		document.write("取整：>" & Round(num) & "<<br />")
+
+		Randomize()
+		document.write("随机数1：>" & Rnd() & "<<br />")
+		document.write("随机数2：>" & Rnd() & "<<br />")
+
+		document.write("0-99随机数：>" & Int(100*Rnd()) & "<<br />")
+
+		document.write("左侧五个字符：>" & Left(str, 5) & "<<br />")
+		document.write("右侧五个字符：>" & Right(str, 5) & "<<br />")
+
+		document.write("替换字符：>" & Replace(str, "Hello", "Hi") & "<<br />")
+
+		document.write("中间第6位开始2个字符：>" & Mid(str, 6, 2) & "<<br />")
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

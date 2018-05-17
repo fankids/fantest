@@ -5,8 +5,8 @@
 <title>测试Servlet页面</title>
 <script type="text/javascript">
 	function fn1() {
-		alert("fn1");
-		window.location="/FanWeb/TestServlet?name=zhangsan&age=18";
+		alert(location.pathname.split("/")[1]);
+		window.location = "/" + location.pathname.split("/")[1] + "/TestServlet?name=zhangsan&age=18";
 	}
 </script>
 </head>

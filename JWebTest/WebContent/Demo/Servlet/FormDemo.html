@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>表单提交Demo</title>
+</head>
+<body>
+	<h3>表单一 GET</h3>
+	<form action="../../TestServlet" method="get">
+		姓名1：<input type="text" name="name1" />
+		<br />
+		年龄1：<input type="text" name="age1" />
+		<br />
+		<input type="submit" value="提交">
+	</form>
+	
+	<h3>表单二 POST</h3>
+	<form action="../../TestServlet" method="post">
+		姓名2：<input type="text" name="name2" />
+		<br />
+		年龄2：<input type="text" name="age2" />
+		<br />
+		<input type="submit" value="提交">
+	</form>
+	
+	<h3>表单三</h3>
+	<form action="../../TestServlet" method="post">
+		所选人：<input type="text" name="selected_name" />
+		<br />
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>

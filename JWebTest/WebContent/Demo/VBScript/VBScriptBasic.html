@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>VB Script基础</title>
+	<script type="text/vbscript">
+		Option Explicit	
+		document.write("This is my first VBScript!")
+		'----变量赋值
+		Dim myname, i, j
+		myname="zhangsan"
+		document.write("<p>")
+		document.write(name)
+		document.write("</p>")
+
+		'----数组赋值
+		Dim tt(2,2)
+		tt(0,0)="1"
+		tt(0,1)="2"
+		tt(0,2)="3"
+		tt(1,0)="4"
+		tt(1,1)="5"
+		tt(1,2)="6"
+		tt(2,0)="7"
+		tt(2,1)="8"
+		tt(2,2)="9"
+		for i=0 to 2
+			document.write("<p>")
+			for j=0 to 2
+				document.write(tt(i,j) & " ")
+			next
+			document.write("</p>")
+		next
+
+		'----子程序定义
+		Sub mysub()
+			document.write("This is a sub procedure <br />")
+		End Sub
+
+		'----子程序定义(带参数)
+		Sub mysub1(name, age)
+			document.write("Hello " & name & ", your age is " & age & "<br />")
+		End Sub
+
+		'----子程序调用
+		Call mysub()
+		call mysub1("zhangsan", 18)
+		mysub1 "lisi", 20
+
+		'----函数定义
+		Function myfun()
+			dim i
+			for i=1 to 10
+				myfun = myfun + i
+			next 
+		End Function
+
+		'----函数定义(带参数)
+		Function myfun1(arg1, arg2)
+			myfun1 = arg1 + arg2
+		End Function
+
+		'----函数调用
+		document.write(myfun() & "<br />")
+		document.write(myfun1(1, 2) & "<br />")
+		
+		'----条件判断
+		Dim flag
+		flag=2
+		
+		'--If...Then...
+		If flag=1 Then alert("flag is " & flag)
+
+		'--If...Then...End If
+		If flag=1 Then
+			document.write("flag is 1 <br />")
+		End If
+	
+		'--If...Then...Else...End If
+		If flag>1 Then
+			document.write("flag is greater than 1 <br />")
+		Else
+			document.write("flag is not greater than 1 <br />")
+		End If
+
+		'--If...Then...ElseIf...Then...Else...End If
+		If flag>2 Then
+			document.write("flag is greater than 2 <br />")
+		ElseIf flag=2 Then
+			document.write("flag is equals 2 <br />")
+		Else
+			document.write("flag is less than 2 <br />")
+		End If
+
+		'--Select Case...Case...Case else...End Select
+		Select Case flag
+			Case 1
+			document.write("1 <br />")
+			Case 2
+			document.write("2 <br />")
+			Case else
+			document.write("Else <br />")
+		End Select
+
+		'----循环语句
+		'--For...Next
+		For i=0 to 5
+			document.write(i & " ")
+		Next
+		document.write("<br />")
+
+		'--For...Step...Next
+		for i=0 to 10 step 2
+			document.write(i & " ")
+		next
+		document.write("<br />")
+
+		'--
+		for i=1 to 10
+			if i=8 then exit for
+			document.write(i & " ")
+		next
+		document.write("<br />")
+
+		'--For Each ... Next
+		dim stus(2), x
+		stus(0) = "zhangsan"
+		stus(1) = "lisi"
+		stus(2) = "wangwu"
+		for each x in stus
+			document.write(x & " ")
+		next
+		document.write("<br />")
+
+		'--Do...Loop
+		i=1
+		dim y
+		do while i<=10
+			y = y + i
+			i = i + 1
+		loop
+		document.write("The reuslt is " & y & "<br />")
+
+		i=1
+		y=0
+		do
+			y = y + i
+			i = i + 1
+		loop while i<=10
+		document.write("The reuslt is " & y & "<br />")
+
+		i=1
+		y=0
+		do until i>10
+			y = y + i
+			i = i + 1
+		loop
+		document.write("The reuslt is " & y & "<br />")
+
+		i=1
+		y=0
+		do
+			y = y + i
+			i = i + 1
+		loop until i>10
+		document.write("The reuslt is " & y & "<br />")
+
+		i=1
+		y=0
+		do
+			y = y + i
+			i = i + 1
+			if i=6 then exit do
+		loop until i>10
+		document.write("The reuslt is " & y & "<br />")
+		
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

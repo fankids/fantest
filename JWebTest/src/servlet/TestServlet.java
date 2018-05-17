@@ -1,7 +1,12 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -31,15 +36,30 @@ public class TestServlet extends HttpServlet {
     	System.out.println("当前类为" + this.getClass().getName() +  "\t当前方法为" + Thread.currentThread().getStackTrace()[1].getMethodName());
     }
 
+	@SuppressWarnings("deprecation")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("当前类为" + this.getClass().getName() +  "\t当前方法为" + Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		String todayNow = new Date().toLocaleString();
+		
+		request.setCharacterEncoding("UTF-8");
+		Map<String, String> reqMap = request.getParameterMap();
+		Set<String> reqKeySet = reqMap.keySet();
+		
 		response.setCharacterEncoding("GBK");
-		response.getWriter().write("返回结果哈哈哈");
+		response.getWriter().write("所有请求参数：<br />");
+		
+		for(Iterator<String> it = reqKeySet.iterator(); it.hasNext(); ) {
+			String key = it.next();
+			response.getWriter().write(key + "：" + request.getParameter(key) + "<br />");
+		}
+		response.getWriter().write("<br />当前时间：" + todayNow);
 		response.getWriter().flush();
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("当前类为" + this.getClass().getName() +  "\t当前方法为" + Thread.currentThread().getStackTrace()[1].getMethodName());
+		doGet(request, response);
 	}
 	
 	@Override
