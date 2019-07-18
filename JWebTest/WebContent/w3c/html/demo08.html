@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 08HTML头部 -->
+		<!-- 08-头部：head
+					标题：title
+					默认链接：base
+					描述、关键词、作者、字符集、刷新时间：meta
+					外部资源：link
+					样式：style
+					脚本：script
+		 -->
+		<title>我的网页</title>
+		<base href="http://www.w3cschool.cn/statics/images/w3c/" target="_blank">
+		<meta charset="UTF-8">
+		<meta name="description" content="HTML头部介绍">
+		<meta name="keywords" content="HTML" >
+		<meta name="author" content="clli">
+		<meta http-equiv="refresh" content="30">
+		<!-- 
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		 -->
+		
+		<style type="text/css">
+			body {background-color:yellow;}
+			p {color:blue;}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				//alert("欢迎访问我的网页！");
+				console.info("这里是控制台");
+			}
+		</script>
+	</head>
+	
+	<body>
+		<p>浏览器中包含body元素的内容。</p>
+		<p>浏览器的标题包含title元素的内容</p>
+		<img src="logo.png">-因为设置了base，指定了链接的默认URL，所以能够地址为相对地址的图片可以正确展示
+		<br/>
+		<a href="http://www.w3cschool.cn">W3Cschool</a>-这个链接会在新窗口打开，因为base标签里设置了target属性为“_blank”。
+		<br/>
+		<a href="http://www.w3cschool.cn" target="_self">W3Cschool</a>-主动设置target属性为“_self”，会在当前页面打开。
+	</body>
+</html>
